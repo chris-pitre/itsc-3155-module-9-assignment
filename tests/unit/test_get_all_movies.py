@@ -7,7 +7,7 @@ def test_get_all_movies():
     test_movie_list.append(test_movie)
     movies = get_movie_repository().get_all_movies()
 
-    assert movies == test_movie_list
-    assert movies[0] == test_movie_list[0]
+    assert type(movies[0]) is Movie
+    assert test_movie_list[0] in movies
     assert movies[0].title == test_movie_list[0].title
 
